@@ -1,0 +1,58 @@
+\documentclass{article}
+\usepackage[left=3cm, right=3cm, top=1cm, bottom=4cm]{geometry} % Utilizo este paquete para ajustar los márgentes que tenía en word
+\usepackage[spanish,es-nodecimaldot]{babel}
+\usepackage[utf8]{inputenc} % Este paquete me ayuda a tener soporte para letras y acentos en español
+\usepackage{graphicx} % Este me sireve para poder poner imágenes
+\usepackage{wrapfig} % Este me sirve para poner las imágenes al costado de los párrafos
+\usepackage{pdfpages} % Este me sirve para poder usar pdfs
+\usepackage{indentfirst} % Este me permite modificar las sangrías
+\usepackage{url} % Este me sirve para poder poner urls
+\usepackage{fancyhdr} % Este me permite establecer el estilo de página (osea encabezad y pié de pág)
+\usepackage{xcolor}
+\usepackage{soul}
+\sethlcolor{yellow}
+\usepackage{fvextra}
+\usepackage{csquotes} % Este me sirve para poner comillas
+\usepackage{amsmath} % Este me sirve para poder escribir ecuaciones
+\usepackage{amssymb} % Creo que me ayuda con símbolos matemáticos
+\usepackage{braket} % Para poder usar la notación de Dirac
+\usepackage{enumitem} % Este me sirve para poder dar formato a las listas
+\usepackage{cite}
+\usepackage{multicol} % Este me sirve para formatear las columnas que quiero en el paper
+\usepackage{float}
+\usepackage{hyperref}% Este sirve para hacer links
+\usepackage[spanish]{cleveref}% Me sirve para los \cref
+
+%Traducciones de cref
+\crefname{equation}{ecuación}{ecuaciones}
+\Crefname{equation}{Ecuación}{Ecuaciones}
+\crefname{figure}{figura}{figuras}
+\Crefname{figure}{Figura}{Figuras}
+\crefname{table}{tabla}{tablas}
+\Crefname{table}{Tabla}{Tablas}
+\crefname{section}{sección}{secciones}
+\Crefname{section}{Sección}{Secciones}
+
+\title{Ecuación de Schrödinger independiente del tiempo en un potencial central. El Átomo de Hidrógeno}
+\author{Lautaro Andres Heredia}
+\date{}
+
+\begin{document}
+    \maketitle
+    
+    \newpage
+    \tableofcontents
+    \newpage
+    
+    \input{secciones/introduccion}
+%    \input{formalismo}
+%    \input{problema}
+%    \input{separación de variables/separacion de variables}
+%    \input{Átomo de Hidrógeno/Átomo de Hidrógeno}
+
+%    \newpage
+%    \nocite{*}
+%    \bibliographystyle{plain}
+%    \bibliography{referencias}
+%    \input{bitacora de ia}
+\end{document}
