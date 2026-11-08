@@ -1,0 +1,100 @@
+# ==========================================
+# Archivos auxiliares y de compilación LaTeX
+# ==========================================
+*.aux
+*.bbl
+*.blg
+*.bcf
+*.fls
+*.fdb_latexmk
+*.lof
+*.log
+*.lot
+*.out
+*.run.xml
+*.synctex.gz
+*.toc
+*.xdv
+
+# ==========================================
+# Índices, nomenclaturas y bibliografías
+# ==========================================
+*.idx
+*.ind
+*.ilg
+*.glo
+*.acn
+*.acr
+*.alg
+*.nlo
+*.nls
+*.ist
+
+# ==========================================
+# Paquete minted
+# ==========================================
+_minted-*/
+*.pyg
+
+# ==========================================
+# PDF (opcional)
+# ==========================================
+# *.pdf
+
+# ==========================================
+# C++: Objetos y bibliotecas compiladas
+# ==========================================
+*.o
+*.obj
+*.so
+*.dylib
+*.dll
+*.exe
+
+# ==========================================
+# C++: Directorios de compilación
+# ==========================================
+build/
+bin/
+obj/
+.cache/
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+CMakeLists.txt.user
+
+# ==========================================
+# Depuración y profiling
+# ==========================================
+*.gcda
+*.gcno
+*.profraw
+*.profdata
+core
+core.*
+
+# ==========================================
+# Python (análisis de simulaciones)
+# ==========================================
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# ==========================================
+# Editores e IDEs
+# ==========================================
+.vscode/
+.idea/
+*.swp
+*.swo
+*.sno
+.vimtex/
+
+# ==========================================
+# Sistema operativo
+# ==========================================
+*~
+.Trash-*
