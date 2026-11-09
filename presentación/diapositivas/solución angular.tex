@@ -1,0 +1,24 @@
+\begin{frame}{Solución angular}
+	Trabajando sobre la parte angular de las ecuaciones \ref{eq:separacion de variables RY}
+	\[
+		\frac{1}{Y}\left[ \frac{1}{\sin{\theta}} \frac{\partial}{\partial\theta} \left(\sin{\theta}\frac{\partial Y}{\partial\theta}\right)+ \frac{1}{r^2\sin^2\theta} \frac{\partial^2Y} {\partial\phi^2}\right] =-\lambda
+	\]
+	Plantearemos una nueva separación de variables
+	\begin{equation}
+		Y(\theta,\phi) = \Theta(\theta) \Phi(\phi)
+		\label{eq:propuesta separacion de variables angulares}
+	\end{equation}
+\end{frame}
+
+\begin{frame}{Solución angular}
+	Por lo que nos queda:
+	\begin{equation}
+		\begin{cases}
+			\begin{aligned}
+			   \frac{\sin{\theta}}{\Theta}\frac{d}{d\theta} \left( \sin{\theta} \frac{d\Theta}{d\theta}\right)+\lambda \sin^2{\theta} &= m^2 \\
+				\frac{1}{\Phi}\frac{d^2\Phi}{d\phi^2} &=-m^2
+			\end{aligned}
+		\end{cases}
+    \label{eq:separacion de variables angular}
+	\end{equation}
+\end{frame}
