@@ -1,0 +1,20 @@
+\begin{frame}{Solución Angular. Variable azimutal}
+	Para $\phi$ tenemos
+	\[
+		\Phi'' + m^2 \Phi = 0
+	\]
+
+	Por la simetría esférica del problema, exigimos que $\Phi(\phi + 2k\pi) = \Phi(\phi)$ con $k\in\mathbb{Z}$ 
+	\[
+		\begin{array}{ll}
+			- \text{Si } m^2 < 0, & \text{Las soluciones son exponenciales reales}\\
+			- \text{Si } m^2 = 0, & \text{Las soluciones son de la forma } \Phi(\phi) = A_0 + B_0\phi \\
+			- \text{Si } m^2 > 0, & \text{Las soluciones son exponenciales imaginarias }
+		\end{array}
+	\]
+	Por lo que usando el conjunto de soluciones fundamentales $\{e^{im\phi}\}$ tenemos
+	\begin{equation}
+		\Phi_m(\phi) = e^{im\phi} \quad \text{con } m\in\mathbb{Z}
+		\label{eq:solución general azimutal}
+	\end{equation}
+\end{frame}
