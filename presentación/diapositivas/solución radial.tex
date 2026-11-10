@@ -1,0 +1,314 @@
+\begin{frame}{Ecuación diferencial radial}
+
+    Considerando el potencial coulombiano
+    \[
+        V(r)=-\frac{e^2}{4\pi\epsilon_0r},
+    \]
+    y la solución angular obtenida anteriormente,
+    $\lambda=l(l+1)$, la ecuación radial resulta
+
+    \begin{equation}
+    -\frac{\hbar^2}{2mr^2}
+    \frac{d}{dr}\left(r^2\frac{dR}{dr}\right)
+    +
+    \left[
+        \frac{\hbar^2l(l+1)}{2mr^2}
+        -\frac{e^2}{4\pi\epsilon_0r}
+    \right]R=ER
+    \label{eq:ec de schrodinger radial}
+    \end{equation}
+
+
+    El término proporcional a $l(l+1)$ representa
+    la contribución centrífuga.
+
+\end{frame}
+
+\begin{frame}{Transformación de la ecuación radial}
+
+    Definimos una nueva función
+    \begin{equation}
+        u(r)\equiv rR(r)
+        \label{eq: definición u}
+    \end{equation}
+        
+
+    De esta definición obtenemos
+    \[
+        R'=\frac{ru'-u}{r^2},
+        \qquad
+        \frac{d}{dr}(r^2R')=ru''.
+    \]
+
+    Sustituyendo en la ecuación radial:
+    \[
+    -\frac{\hbar^2}{2m}u''
+    +
+    \left[
+        \frac{\hbar^2l(l+1)}{2mr^2}
+        -\frac{e^2}{4\pi\epsilon_0r}
+    \right]u=Eu.
+    \]
+
+\end{frame}
+
+\begin{frame}{Adimensionalización de la ecuación}
+
+    Para estados ligados tenemos $E<0$. Definimos
+    \begin{equation}
+        \rho=\frac{\sqrt{2m|E|}}{\hbar}r
+    \end{equation}
+
+    y el parámetro
+    \begin{equation}
+        \rho_0=\frac{me^2}{2\pi\epsilon_0\hbar\sqrt{2m|E|}}
+    \end{equation}
+ 
+    De esta manera, la ecuación radial queda
+    \begin{equation}
+        \frac{d^2u}{d\rho^2} =
+        \left[
+            1-\frac{\rho_0}{\rho}+\frac{l(l+1)}{\rho^2}
+        \right]u
+        \label{eq:edo radial adimensional}
+    \end{equation}
+
+    La dependencia energética se encuentra ahora contenida
+    en el parámetro $\rho_0$.
+
+\end{frame}
+
+\begin{frame}{Comportamiento asintótico de la solución}
+
+    \begin{columns}[T]
+
+        \begin{column}{0.48\textwidth}
+            \textbf{Para $\rho\rightarrow\infty$}
+
+            La ecuación se aproxima a
+            \[
+                u''\approx u.
+            \]
+
+            Su solución general es
+            \[
+                u=Ae^{-\rho}+Be^\rho.
+            \]
+
+            La normalización exige $B=0$. Por lo tanto,
+            \[
+                u\sim Ae^{-\rho}.
+            \]
+        \end{column}
+
+        \begin{column}{0.48\textwidth}
+            \textbf{Para $\rho\rightarrow0$}
+
+            La ecuación se aproxima a
+            \[
+                u''\approx
+                \frac{l(l+1)}{\rho^2}u.
+            \]
+
+            Proponiendo $u\sim\rho^s$:
+            \[
+                s(s-1)=l(l+1).
+            \]
+
+            Sus raíces son $s=l+1$ y $s=-l$
+            La regularidad en el origen selecciona
+            \[
+                u\sim B\rho^{l+1}.
+            \]
+        \end{column}
+    \end{columns}
+\end{frame}
+
+\begin{frame}{Propuesta de solución}
+
+    A partir del comportamiento asintótico, proponemos
+    \[
+        u(\rho)=\rho^{l+1}e^{-\rho}v(\rho)
+    \]
+
+    Derivando dos veces:
+    \begin{equation}
+        u''={}\rho^{l+1}e^{-\rho}v''+2\left(\frac{l+1}{\rho}-1\right)v'+
+        \left(
+            \frac{l(l+1)}{\rho^2}
+            -\frac{2(l+1)}{\rho}+1
+        \right)v
+        \label{eq:dud2}
+    \end{equation}
+
+    Sustituyendo la ecuación \ref{eq:dud2} en la ecuación diferencial radial adimensional \ref{eq:edo radial adimensional}:
+    
+    \begin{equation}
+        \rho v''+2(l+1-\rho)v'+[\rho_0-2(l+1)]v=0
+    \end{equation}
+\end{frame}
+
+\begin{frame}{Desarrollo en series de potencias}
+
+    Proponemos una solución de la forma
+    \[
+        v(\rho)=\sum_{k=0}^{\infty}c_k\rho^k.
+    \]
+
+    Sus derivadas son
+    \[
+        v'=\sum_{k=0}^{\infty}(k+1)c_{k+1}\rho^k,
+    \]
+    \[
+        v''=\sum_{k=0}^{\infty}k(k+1)c_{k+1}\rho^{k-1}.
+    \]
+
+\end{frame}
+\begin{frame}{Desarrollo en series de potencias}
+    Sustituyendo en la ecuación diferencial y agrupando
+    los coeficientes de cada potencia de $\rho$:
+    \[
+    \begin{aligned}
+    (k+1)(k+2l+2)c_{k+1}+[\rho_0-2(k+l+1)]c_k=0.
+    \end{aligned}
+    \]
+
+    Obtenemos la relación de recurrencia
+    \begin{equation}
+        c_{k+1}=
+        \frac{2(k+l+1)-\rho_0}
+        {(k+1)(k+2l+2)}c_k
+    \end{equation}
+        
+\end{frame}
+\begin{frame}{Terminación de la serie y cuantización}
+
+    Para obtener una solución polinómica de grado $N$,
+    exigimos $c_{N-1}\neq0$ y  $c_{N+1}=0.$
+
+
+    Aplicando esta condición a la relación de recurrencia:
+    \[
+        2(N+l+1)-\rho_0=0.
+    \]
+
+        Definimos el número cuántico principal
+    \[
+        n=N+l+1
+    \]
+
+    De esta manera:
+    \[
+        \rho_0=2n
+    \]
+
+    y, como $N\geq0$ y $l\geq0$:
+    \[
+        n=1,2,\ldots,\qquad 0\leq l\leq n-1.
+    \]
+
+\end{frame}
+\begin{frame}{Energías permitidas}
+    Como $\rho_0=2n$, despejando la energía:
+    \[
+        E_n=
+        -\frac{me^4}{2\hbar^2(4\pi\epsilon_0)^2}
+        \frac{1}{n^2} \simeq-\frac{13.6\,\text{eV}}{n^2}\qquad n=1,2,\ldots
+    \]
+    Definiendo el radio de Bohr
+    \[
+        a_0=\frac{4\pi\epsilon_0\hbar^2}{me^2},
+    \]
+    obtenemos:
+    \[
+        \rho=\frac{r}{na_0}.
+    \]
+\end{frame}
+\begin{frame}{Solución radial y función de onda}
+    Recordando que $u=rR$ y
+    \(
+        u(\rho)=\rho^{l+1}e^{-\rho}v(\rho),
+    \)
+    obtenemos
+    \begin{equation}
+        R_{nl}(r)=
+        C_{nl}\frac{\rho^{l+1}e^{-\rho}}{r}
+        v_{nl}(\rho)
+    \end{equation}
+        
+    La función de onda completa queda expresada como
+    \[
+        \boxed{
+        \psi_{nlm}(\mathbf r)=
+        C_{nl}\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}\frac{\rho^{l+1}e^{-\rho}}{r}v_{nl}(\rho)\,P_l^m(\cos\theta)\, e^{im\phi}
+        }
+    \]
+
+    Los números cuánticos cumplen
+    \[
+        \begin{cases}
+            n=1,2,\ldots\\
+            l=0,1,\ldots,n-1\\
+            m=-l,-l+1,\ldots,l
+        \end{cases}
+    \]
+
+    Si las funciones angulares están normalizadas:
+    \[
+        \boxed{
+        \int_0^\infty |R_{nl}(r)|^2r^2\,dr=1
+        }
+    \]
+
+\end{frame}
+\begin{frame}{Nivel fundamental ($n=1$)}
+ La autoenergía correspondiente es
+    \[
+        \boxed{E_1=-13.6\ \mathrm{eV}}
+    \]
+
+    Para $n=1$, necesariamente $l=0$ y $m=0$.La función radial normalizada es
+    \[
+        \boxed{
+        R_{10}(r)=2a^{-3/2}e^{-r/a}
+        }
+    \]
+
+    Como $Y_0^0=1/\sqrt{4\pi}$, la función de onda completa resulta
+    \[
+        \boxed{
+        \psi_{100}(\mathbf r)=
+        \frac{1}{\sqrt{\pi a^3}}e^{-r/a}
+        }
+    \]
+
+    \vspace{0.3cm}
+
+   
+\end{frame}
+
+\begin{frame}{Segundo nivel de energía ($n=2$)}
+    Las soluciones corresponden a la autoenergía:
+    \[
+        \boxed{E_2=-3.4\ \mathrm{eV}}
+    \]
+    Para $n=2$, los valores permitidos son $l=0,1$.Las funciones radiales normalizadas son
+
+    \[
+    \boxed{
+    R_{20}(r)=
+    \frac{a^{-3/2}}{\sqrt{2}}
+    \left(1-\frac{r}{2a}\right)e^{-r/(2a)}
+    }
+    \]
+
+    \[
+    \boxed{
+    R_{21}(r)=
+    \frac{a^{-3/2}}{2\sqrt{6}}
+    \left(\frac{r}{a}\right)e^{-r/(2a)}
+    }
+    \]
+
+    \vspace{0.3cm}
+\end{frame}

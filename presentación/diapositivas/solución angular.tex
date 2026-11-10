@@ -22,3 +22,40 @@
     \label{eq:separacion de variables angular}
 	\end{equation}
 \end{frame}
+
+\input{diapositivas/solución phi}
+\input{diapositivas/solución theta.tex}
+
+\begin{frame}{Solución angular general}
+	Por las soluciones de las ecuaciones \ref{eq:solución general azimutal} y \ref{eq: solucion polar} obtenemos que 
+	\[ 
+		Y_{lm}(\theta,\phi) = A_{lm} P_l^m(\cos\theta) e^{im\phi}
+	\]
+	Como buscamos soluciones normalizadas debe cumplirse que
+
+	\begin{equation}
+		\int_{0}^{2\pi}\int_{0}^{\pi}|Y_{lm}(\theta,\phi)|^2\sin{\theta}\,d\theta d\phi =1
+		\label{eq:Normalidad de Y_{lm}}
+	\end{equation}
+	Entonces
+	\[
+		|A_{lm}|^2\, 2\pi \int_{-1}^{1} P_l^m(x) \,P_l^m(x)\,dx =1
+	\]
+
+\end{frame}
+\begin{frame}{Solución angualr general}
+	Por la ortogonalidad de los Polinomios de legendre 
+	\[
+		\int_{-1}^{1} P_l^m(x)P_{l'}^m(x)\,dx =\frac{2}{2l+1}\frac{(l+m)!}{(l-m)!}\delta_{ll'}
+	\]
+
+	nos queda que 
+	\[
+    	A_{lm} = \sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}
+	\]
+	Entonces nos queda que las soluciones de la parte angular nos queda de la forma:
+	\begin{equation}
+		Y_{lm}(\theta,\phi)=\sqrt{\frac{2l+1}{4\pi}\frac{(l-m)!}{(l+m)!}}\,P_l^m(\cos\theta)\, e^{im\phi}
+		\label{eq: ecuacion general angular normalizada}
+	\end{equation}
+\end{frame}

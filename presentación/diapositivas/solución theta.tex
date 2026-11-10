@@ -1,6 +1,265 @@
-\begin{frame}{Solución angular. Variable polar}
+\begin{frame}{Variable polar. 1er cambio de variables}
 	Para la parte polar
 	\[
     	\frac{\sin{\theta}}{\Theta}\frac{d}{d\theta} \left( \sin{\theta} \frac{d\Theta}{d\theta}\right)+\lambda \sin^2{\theta} = m^2 
 	\]
+
+	Sea \(F = F(\theta)\), por regla de la cadena tenemos que 
+	\[
+		\frac{dF}{d\theta} = \frac{dF}{dx}\frac{dx}{d\theta}=-\sin{\theta}\frac{dF}{dx}
+	\]
+	Proponiendo el cambio de variables $x = \cos{\theta}$:
+	\begin{equation}
+		\left( 1-x^2\right) \frac{d^2\Theta}{dx^2}-2x\frac{d\Theta}{dx}+ \left[ \lambda -\frac{m^2}{1-x^2}\right]\Theta =0
+		 \label{eq:ecuación diferencial de segundo orden de Theta}
+	\end{equation}
+\end{frame}
+
+\begin{frame}{Variable polar. 2do cambio de variables}
+	Proponemos OTRO cambio de variables
+	\begin{equation}
+		\begin{cases}
+			 \begin{aligned}
+				\Theta(x) =& \left(1-x^2\right)^{m/2} \, P(x) \\
+				\Theta'(x) =& \left(1-x^2\right)^{m/2}P'(x)-mx\left(1-x^2\right)^{m/2-1}P(x)\\
+				\Theta''(x) =& \left(1-x^2\right)^{m/2}P''(x)-2mx\left(1-x^2\right)^{m/2-1}P'(x)    \\ 
+				&+ \left[-m\left(1-x^2\right)^{m/2-1}+(m^2-2m)x^2\left(1-x^2\right)^{m/2-2}\right]P(x).
+			\end{aligned}   
+		\end{cases}
+		\label{eq:cambio de variables de Theta a P}
+	\end{equation}
+	Quedándonos la EDO de segundo orden
+	\begin{equation}
+		\left(1-x^2 \right)P'' - 2x(m+1)P' + \left[\lambda-m(m+1)\right]P = 0
+		\label{eq:ecuacion diferencial de segundo orden polar trabajable}
+	\end{equation}
+\end{frame}
+
+\begin{frame}{Variable polar. Puntos singulares}
+	Dividiendo la ecuación \ref{eq:ecuacion diferencial de segundo orden polar trabajable} por el coeficiente de la derivada de mayor orden, obtenemos la forma normal:
+    \[
+        P''+p(x)P'+q(x)P=0,
+    \]
+    donde
+    \[
+        p(x)=\frac{-2x(m+1)}{1-x^2},
+        \qquad
+        q(x)=\frac{\lambda-m(m+1)}{1-x^2}.
+    \]
+
+    Los puntos singulares posibles se encuentran donde en $x_0=\pm 1$.
+    Aplicamos el criterio de Fuchs. Un punto singular $x_0$
+    es regular si las funciones
+    \[
+        (x-x_0)p(x),
+        \qquad
+        (x-x_0)^2q(x)
+    \]
+    son analíticas en dicho punto.
+\end{frame}
+
+\begin{frame}{Variable polar. Puntos singulares}
+    \vspace{0.3cm}
+
+    \begin{columns}[T]
+
+        \begin{column}{0.48\textwidth}
+            \centering
+            \textbf{Para $x_0=1$}
+
+            \[
+                (x-1)p(x)
+                =\frac{2x(m+1)}{x+1}
+            \]
+
+            \[
+                (x-1)^2q(x)
+                =-\frac{[\lambda-m(m+1)](x-1)}
+                {x+1}
+            \]
+
+            Ambas son analíticas en $x=1$.
+        \end{column}
+
+        \begin{column}{0.48\textwidth}
+            \centering
+            \textbf{Para $x_0=-1$}
+
+            \[
+                (x+1)p(x)
+                =\frac{2x(m+1)}{x-1}
+            \]
+
+            \[
+                (x+1)^2q(x)
+                =-\frac{[\lambda-m(m+1)](x+1)}
+                {x-1}
+            \]
+
+            Ambas son analíticas en $x=-1$.
+        \end{column}
+
+    \end{columns}
+
+    \vspace{0.3cm}
+	$x_0 = \pm 1$ son puntos singuleres regulares.
+
+\end{frame}
+
+\begin{frame}{Variable polar. Frobenius}
+	Para resover la ecuación \ref{eq:ecuacion diferencial de segundo orden polar trabajable} proponemos una solución por el método de Frobenius
+
+	\begin{equation}
+		\begin{cases}
+			P(x) = \sum_{n=0}^\infty a_n x^{n+r}\quad\text{, con }a_0 \neq 0	\\
+			P'(x) = \sum_{n=0}^\infty \left( n+r \right)a_n x^{n+r-1} \\
+			P''(x) = \sum_{n=0}^\infty \left( n+r \right) \left( n+r-1 \right) a_n x^{n+r-2}
+		\end{cases}
+	\end{equation}
+	Reemplazando en la ec \ref{eq:ecuacion diferencial de segundo orden polar trabajable} y nos queda una ecuación indicial $r(r-1) a_0 = 0$ por lo que tenemos dos raíces $r = 0$ y $r = 1$. Y nos queda la relación de recursividad 
+	\begin{equation}
+		a_{n+2} = \frac{(n+t)(r+n+2m+1)+m(m+1)-\lambda }{(r+m+2)(r+n+1)}a_n
+		\label{eq:recursividad de P}
+	\end{equation}
+	
+\end{frame}
+
+
+\begin{frame}{variable polar. frobenius}
+    Al resolver la ecuación diferencial mediante series de
+    potencias, obtenemos, en general, una serie infinita.
+
+    \vspace{0.2cm}
+
+    Sin embargo, para obtener soluciones regulares en ambos
+    extremos del intervalo $[-1,1]$, debemos seleccionar
+    determinados valores de la constante de separación.
+
+    \vspace{0.2cm}
+
+    Una condición que permite obtener estas soluciones es
+    exigir que la serie termine:
+    \[
+        a_N\neq 0,\qquad a_{N+2}=0
+    \]
+\end{frame}
+
+\begin{frame}{Variable polar. Solución par}
+
+    Para $r=0$, la relación de recurrencia es
+	\begin{equation}
+		a_{n+2}=\frac{n(n+2m+1)+m(m+1)-\lambda}{(n+2)(n+1)}a_n.
+		\label{eq:recursividad de P r=0}
+	\end{equation}
+    Buscamos una solución polinómica de grado $N$, con
+    $N$ par, por lo que exigimos
+    \[
+        a_N\neq 0,\qquad a_{N+2}=0.
+    \]
+
+    Esta condición implica
+    \[
+        N(N+2m+1)+m(m+1)=\lambda.
+    \]
+\end{frame}
+
+\begin{frame}{Variable polar. Solución par}
+
+    Factorizando y definiendo $l=N+m$, obtenemos
+    \[
+        \lambda=l(l+1),\qquad l\geq m.
+    \]
+
+    La solución obtenida es un polinomio par:
+    \[
+        P(x)=a_0+a_2x^2+\cdots+a_Nx^N.
+    \]
+
+\end{frame}
+\begin{frame}{Variable polar. Solución impar}
+
+    Para $r=1$, obtenemos la relación de recurrencia
+	\begin{equation}
+        a_{n+2}=
+        \frac{(n+m+1)(n+m+2)-\lambda}
+        {(n+3)(n+2)}a_n.
+	\end{equation}
+
+    Exigiendo nuevamente la terminación de la serie en $N$
+    obtenemos
+    \[
+        \lambda=(N+m+1)(N+m+2).
+    \]
+    Definiendo $l=N+m+1$:
+    \[
+        \lambda=l(l+1),\qquad l\geq m+1.
+    \]
+
+    En este caso obtenemos un polinomio impar:
+    \[
+        P(x)=a_0x+a_2x^3+\cdots+a_Nx^{N+1}.
+    \]
+
+\end{frame}
+
+\begin{frame}{Variable polar. Identificación con Legendre}
+
+    Comparando ambas ramas:
+    \[
+        \begin{cases}
+            l-m=N & \text{par},\\
+            l-m=N+1 & \text{impar}.
+        \end{cases}
+    \]
+
+    Por lo tanto, reuniendo ambas soluciones:
+    \[
+        l\in\mathbb{N}_0,\qquad l\geq m
+    \]
+    y la constante de separación queda cuantizada:
+	\begin{equation}
+        \lambda=l(l+1)
+	\end{equation}
+
+    \end{frame}
+    \begin{frame}{Variable polar. Identificación con Legendre}
+    Los polinomios ordinarios de Legendre satisfacen
+	\begin{equation}
+        (1-x^2)P_l''-2xP_l'+l(l+1)P_l=0.
+		\label{eq:EDO polinomios ordinarios de legendre}
+	\end{equation}
+
+	Derivando $m$ veces respecto de $x$ la ecuación \ref{eq:EDO polinomios ordinarios de legendre} y trabajando en ella se puede llegar a que
+    \[
+        (1-x^2)\frac{d^{m+2}P_l}{dx^{m+2}}-2x(m+1)\frac{d^{m+1}P_l}{dx^{m+1}}+[l(l+1)-m(m+1)]\frac{d^mP_l}{dx^m}=0.
+    \]
+
+	Esta ecuación coincide con la ecuación \ref{eq:ecuacion diferencial de segundo orden polar trabajable} obtenida para $P(x)$.    Por comparación de las ecuaciones diferenciales,podemos identificar
+    \[
+        P(x)\propto\frac{d^mP_l(x)}{dx^m}.
+    \]
+\end{frame}
+
+\begin{frame}{Variable polar. Polinomios asociados de Legendre}
+
+
+    Recordando el cambio de variables realizado:
+    \[
+        \Theta(\theta)=(1-x^2)^{m/2}P(x),
+    \]
+
+    Adoptando la convención de fase de Condon-Shortley,
+    definimos los polinomios asociados de Legendre:
+	\begin{equation}
+        P_l^m(x)=(-1)^m(1-x^2)^{m/2}
+        \frac{d^mP_l(x)}{dx^m}
+		\label{eq:polinomio asociado de legendre}
+	\end{equation}
+
+    Por lo tanto, la solución polar es
+	\begin{equation}
+        \Theta_{lm}(\theta)=A_{lm}P_l^m(\cos\theta)
+		\label{eq: solucion polar}
+    \end{equation}
+
 \end{frame}
